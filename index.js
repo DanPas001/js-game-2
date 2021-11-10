@@ -15,18 +15,18 @@ var circle = function (x, y, radius){
 // drawing a bird
 var drawBird = function (x, y) {
   ctx.fillStyle = "DarkBlue";
-  ctx.fillRect(x, y-100, 200, 200);
+  ctx.fillRect(x, y-20, 40, 40);
 
   ctx.fillStyle = "DarkGray";
-  ctx.fillRect(x-50, y-100, 20, 200);
-  ctx.fillRect(x+50, y-100, 20, 200);
+  ctx.fillRect(x-10, y-20, 4, 40);
+  ctx.fillRect(x+10, y-20, 4, 40);
 
   ctx.fillStyle = "Blue";
-  circle(x, y, 100);
+  circle(x, y, 20);
 
   ctx.fillStyle = "Black";
-  circle(x-30, y+30, 20);
-  circle(x+30, y+30, 20);
+  circle(x-6, y+6, 4);
+  circle(x+6, y+6, 4);
 
 }
 
