@@ -7,14 +7,14 @@
   </head>
   <body>
     <h1>The Game</h1>
-    <canvas id="canvas" width="1280" height="720"></canvas>
+    <canvas id="canvas" width="500" height="500"></canvas>
 
     <script type="text/javascript">
       // set the canvas
       var canvas = document.getElementById("canvas");
       var ctx = canvas.getContext("2d");
       ctx.fillStyle = "DarkTurquoise";
-      ctx.fillRect(0, 0, 1280, 720);
+      ctx.fillRect(0, 0, 500, 500);
 
       // function for drawing circles
       var circle = function (x, y, radius){
@@ -23,27 +23,34 @@
         ctx.fill();
       }
 
+      // drawing a ball
+      var drawBall = function (x, y) {
 
-      // drawing a bird
-      var drawBird = function (x, y) {
-        ctx.fillStyle = "DarkBlue";
-        ctx.fillRect(x-20, y, 40, 40);
+        ctx.fillStyle = "Gold";
+        circle(x, y, 100);
+        ctx.fillStyle = "GoldenRod";
+        circle(x-120, y, 20);
+        circle(x+120, y, 20);
 
-        ctx.fillStyle = "DarkGray";
-        ctx.fillRect(x-10, y-10, 4, 50);
-        ctx.fillRect(x+10, y-10, 4, 50);
+      }
+      
+      var update = function(coordinate){
+        var offset = Math.random()*4-2;
+        coordinate += offset;
 
-        ctx.fillStyle = "Blue";
-        circle(x, y, 20);
+        if(coordinate > 500){
+          coordinate = 500;
+        }
 
-        ctx.fillStyle = "Black";
-        circle(x-6, y-6, 4);
-        circle(x+6, y-6, 4);
+        if(coordinate > 0){
+          coordinate = 0;
+        }
+
+        return coordinate;
 
       }
 
-      drawBird(320, 240);
-
+      drawBall(x+250, y-250);
     </script>
 
   </body>
