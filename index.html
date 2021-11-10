@@ -7,14 +7,14 @@
   </head>
   <body>
     <h1>The Game</h1>
-    <canvas id="canvas" width="640" height="480">(game should be in here)</canvas>
+    <canvas id="canvas" width="1280" height="720"></canvas>
 
     <script type="text/javascript">
       // set the canvas
       var canvas = document.getElementById("canvas");
       var ctx = canvas.getContext("2d");
       ctx.fillStyle = "DarkTurquoise";
-      ctx.fillRect(0, 0, 640, 480);
+      ctx.fillRect(0, 0, 1280, 720);
 
       // function for drawing circles
       var circle = function (x, y, radius){
@@ -27,18 +27,18 @@
       // drawing a bird
       var drawBird = function (x, y) {
         ctx.fillStyle = "DarkBlue";
-        ctx.fillRect(x, y-10, 20, 20);
+        ctx.fillRect(x, y-100, 200, 200);
 
         ctx.fillStyle = "DarkGray";
-        ctx.fillRect(x-5, y-10, 2, 20);
-        ctx.fillRect(x+5, y-10, 2, 20);
+        ctx.fillRect(x-50, y-100, 20, 200);
+        ctx.fillRect(x+50, y-100, 20, 200);
 
         ctx.fillStyle = "Blue";
-        circle(x, y, 10);
+        circle(x, y, 100);
 
         ctx.fillStyle = "Black";
-        circle(x-3, y+3, 2);
-        circle(x+3, y+3, 2);
+        circle(x-30, y+30, 20);
+        circle(x+30, y+30, 20);
 
       }
 
