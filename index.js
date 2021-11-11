@@ -2,7 +2,7 @@
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 ctx.fillStyle = "DarkTurquoise";
-ctx.fillRect(0, 0, 1280, 720);
+ctx.fillRect(0, 0, 500, 500);
 
 // function for drawing circles
 var circle = function (x, y, radius){
@@ -12,22 +12,31 @@ var circle = function (x, y, radius){
 }
 
 
-// drawing a bird
-var drawBird = function (x, y) {
-  ctx.fillStyle = "DarkBlue";
-  ctx.fillRect(x, y-20, 40, 40);
+// drawing a ball
+var drawBall = function (x, y) {
 
-  ctx.fillStyle = "DarkGray";
-  ctx.fillRect(x-10, y-20, 4, 40);
-  ctx.fillRect(x+10, y-20, 4, 40);
-
-  ctx.fillStyle = "Blue";
-  circle(x, y, 20);
-
-  ctx.fillStyle = "Black";
-  circle(x-6, y+6, 4);
-  circle(x+6, y+6, 4);
+  ctx.fillStyle = "Gold";
+  circle(x, y, 100);
+  ctx.fillStyle = "GoldenRod";
+  circle(x-120, y, 20);
+  circle(x+120, y, 20);
 
 }
 
-drawBird(320, 240);
+var update = function(coordinate){
+  var offset = Math.random()*4-2;
+  coordinate += offset;
+
+  if(coordinate > 500){
+    coordinate = 500;
+  }
+
+  if(coordinate > 0){
+    coordinate = 0;
+  }
+
+  return coordinate;
+
+}
+
+drawBall(x+250, y-250);
